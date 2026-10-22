@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata AR Uygulaması</title>
+    <!-- Google Model Viewer Kütüphanesi -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        body { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background-color: #f0f0f0; }
+        model-viewer { width: 100%; height: 100%; }
+        .ar-button {
+            background-color: #e30a17; color: white; border: none; padding: 12px 24px;
+            border-radius: 25px; font-weight: bold; font-size: 16px;
+            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- autoplay parametresi modelin içindeki animasyonu otomatik başlatır -->
+    <model-viewer
+        src="Ata.glb"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        autoplay
+        shadow-intensity="1"
+        alt="Ata 3D Modeli">
+
+        <button slot="ar-button" class="ar-button">
+            📷 Kamerada (AR) Göster
+        </button>
+    </model-viewer>
+
+</body>
+</html>
